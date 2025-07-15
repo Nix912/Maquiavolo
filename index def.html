@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquiavolo - La Hermandad de los Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Assassin%27s_Creed_logo.svg/1200px-Assassin%27s_Creed_logo.svg.png" alt="Logo Maquiavolo">
+            <div>
+                <h1>Maquiavolo</h1>
+                <p class="tagline">Nada es verdad, todo está permitido</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link active" data-section="home">Inicio</a></li>
+                <li><a href="#" class="nav-link" data-section="games">Videojuegos</a></li>
+                <li><a href="#" class="nav-link" data-section="products">Productos</a></li>
+                <li><a href="#" class="nav-link" data-section="stores">Recargas</a></li>
+                <li><a href="#" class="nav-link" data-section="preorders">Reservas</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="#" id="login-btn"><i class="fas fa-user"></i> Iniciar Sesión</a>
+            <a href="#" id="register-btn"><i class="fas fa-user-plus"></i> Registrarse</a>
+            <a href="#" id="profile-btn" style="display: none;" class="nav-link" data-section="profile"><i class="fas fa-user-circle"></i> Mi Perfil</a>
+            <a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+            <a href="#" id="cart-btn"><i class="fas fa-shopping-cart"></i> Carrito <span class="cart-count">0</span></a>
+        </div>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar juegos, productos...">
+        <button><i class="fas fa-search"></i> Buscar</button>
+    </div>
+    <div class="container">
+        <section id="home" class="content-section active">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <h2>Requiescat in Pace, Gamers</h2>
+                    <p>Únete a la Hermandad de los Videojuegos. Maquiavolo te ofrece la mejor selección de títulos de Assassin's Creed, productos exclusivos y recargas para tus plataformas favoritas. Inspirados en el Renacimiento italiano y la saga de Ezio Auditore.</p>
+                    <div>
+                        <a href="#" class="btn nav-link" data-section="games">Explorar Juegos</a>
+                        <a href="#" class="btn btn-outline nav-link" data-section="stores">Recargar Saldo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services content-section">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hood-cloak"></i>
+                    </div>
+                    <h3>Juegos de la Hermandad</h3>
+                    <p>Toda la saga Assassin's Creed, desde los clásicos hasta los últimos lanzamientos, con ediciones especiales y coleccionistas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Recargas Digitales</h3>
+                    <p>Recarga saldo al instante en tus plataformas favoritas como Steam, PlayStation Network y más, con códigos inmediatos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3>Coleccionables Exclusivos</h3>
+                    <p>Figuras, espadas ocultas, atuendos y más productos oficiales de Assassin's Creed que no encontrarás en otro lugar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="games" class="content-section">
+            <h2 class="section-title">Juegos de la Hermandad</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="platform-filter">Plataforma:</label>
+                    <select id="platform-filter">
+                        <option value="all">Todas</option>
+                        <option value="pc">PC</option>
+                        <option value="ps5">PlayStation 5</option>
+                        <option value="xbox">Xbox Series X</option>
+                        <option value="switch">Nintendo Switch</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="genre-filter">Género:</label>
+                    <select id="genre-filter">
+                        <option value="all">Todos</option>
+                        <option value="action">Acción</option>
+                        <option value="rpg">RPG</option>
+                        <option value="adventure">Aventura</option>
+                        <option value="stealth">Sigilo</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-by">Ordenar por:</label>
+                    <select id="sort-by">
+                        <option value="popular">Más populares</option>
+                        <option value="newest">Más recientes</option>
+                        <option value="price-low">Precio: menor a mayor</option>
+                        <option value="price-high">Precio: mayor a menor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-product-id="1" data-price="49.99">
+                    <div class="product-image" style="background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202010/0222/niMUubpU6N1UJXpZeuK3zXhN.png');">
+                        <span class="product-badge">Oferta</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="PlayStation 5"><i class="fab fa-playstation"></i></span>
+                            <span class="platform-icon" title="Xbox Series X"><i class="fab fa-xbox"></i></span>
+                            <span class="platform-icon" title="PC"><i class="fas fa-desktop"></i></span>
+                        </div>
+                        <h3 class="product-title">Assassin's Creed Valhalla</h3>
+                        <p class="product-description">Conviértete en Eivor, un fiero guerrero vikingo, en este emocionante RPG de mundo abierto.</p>
+                        <div class="product-price">
+                            <span class="price-main">$49.99</span>
+                            <span class="price-old">$59.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart" data-name="Assassin's Creed Valhalla" data-price="49.99"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            <button class="btn view-details"><i class="fas fa-info-circle"></i> Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="2" data-price="39.99">
+                    <div class="product-image" style="background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202206/2717/Zt73S1q1XF7l59zP1k9n1r00.png');">
+                        <span class="product-badge">Nuevo</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="PC"><i class="fas fa-desktop"></i></span>
+                            <span class="platform-icon" title="PlayStation 5"><i class="fab fa-playstation"></i></span>
+                            <span class="platform-icon" title="Xbox Series X"><i class="fab fa-xbox"></i></span>
+                        </div>
+                        <h3 class="product-title">Assassin's Creed Mirage</h3>
+                        <p class="product-description">Experimenta la historia de Basim en Bagdad, un regreso a las raíces de la saga.</p>
+                        <div class="product-price">
+                            <span class="price-main">$39.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart" data-name="Assassin's Creed Mirage" data-price="39.99"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            <button class="btn view-details"><i class="fas fa-info-circle"></i> Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="3" data-price="29.99">
+                    <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/2/2f/Assassin%27s_Creed_II_Cover.jpg');">
+                        <span class="product-badge">Clásico</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="PC"><i class="fas fa-desktop"></i></span>
+                            <span class="platform-icon" title="PlayStation"><i class="fab fa-playstation"></i></span>
+                            <span class="platform-icon" title="Xbox"><i class="fab fa-xbox"></i></span>
+                        </div>
+                        <h3 class="product-title">Assassin's Creed II</h3>
+                        <p class="product-description">Sigue la épica historia de Ezio Auditore da Firenze en la Italia renacentista.</p>
+                        <div class="product-price">
+                            <span class="price-main">$29.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart" data-name="Assassin's Creed II" data-price="29.99"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            <button class="btn view-details"><i class="fas fa-info-circle"></i> Detalles</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-product-id="4" data-price="24.99">
+                    <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/e/e4/AC_Brotherhood.jpg');">
+                        <span class="product-badge">Ezio Saga</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="PC"><i class="fas fa-desktop"></i></span>
+                            <span class="platform-icon" title="PlayStation"><i class="fab fa-playstation"></i></span>
+                            <span class="platform-icon" title="Xbox"><i class="fab fa-xbox"></i></span>
+                        </div>
+                        <h3 class="product-title">Assassin's Creed Brotherhood</h3>
+                        <p class="product-description">Ezio continúa su lucha contra los Templarios en Roma, reclutando a su propia hermandad.</p>
+                        <div class="product-price">
+                            <span class="price-main">$24.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart" data-name="Assassin's Creed Brotherhood" data-price="24.99"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            <button class="btn view-details"><i class="fas fa-info-circle"></i> Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="5" data-price="19.99">
+                    <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/7/7b/Assassin%27s_Creed_Revelations_Cover.jpg');">
+                        <span class="product-badge">Ezio Saga</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="PC"><i class="fas fa-desktop"></i></span>
+                            <span class="platform-icon" title="PlayStation"><i class="fab fa-playstation"></i></span>
+                            <span class="platform-icon" title="Xbox"><i class="fab fa-xbox"></i></span>
+                        </div>
+                        <h3 class="product-title">Assassin's Creed Revelations</h3>
+                        <p class="product-description">Ezio viaja a Constantinopla en busca de los secretos de Altaïr.</p>
+                        <div class="product-price">
+                            <span class="price-main">$19.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart" data-name="Assassin's Creed Revelations" data-price="19.99"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            <button class="btn view-details"><i class="fas fa-info-circle"></i> Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="content-section">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="products-grid">
+                <div class="product-card" data-product-id="6" data-price="75.00">
+                    <div class="product-image" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/71Y9n5J4UaL._AC_SL1500_.jpg');">
+                        <span class="product-badge">Nuevo</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="Merchandising"><i class="fas fa-tshirt"></i></span>
+                        </div>
+                        <h3 class="product-title">Réplica Hoja Oculta Ezio</h3>
+                        <p class="product-description">Réplica a escala 1:1 de la icónica hoja oculta de Ezio Auditore. Ideal para coleccionistas.</p>
+                        <div class="product-price">
+                            <span class="price-main">$75.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart" data-name="Réplica Hoja Oculta Ezio" data-price="75.00"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            <button class="btn view-details"><i class="fas fa-info-circle"></i> Detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-product-id="7" data-price="45.00">
+                    <div class="product-image" style="background-image: url('https://i.ebayimg.com/images/g/V3oAAOSw5UZiX5rG/s-l1600.jpg');">
+                        <span class="product-badge">Edición Limitada</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="Merchandising"><i class="fas fa-hat-wizard"></i></span>
+                        </div>
+                        <h3 class="product-title">Sudadera con Capucha de Asesino</h3>
+                        <p class="product-description">Sudadera de alta calidad inspirada en el atuendo de Ezio.</p>
+                        <div class="product-price">
+                            <span class="price-main">$45.00</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart" data-name="Sudadera con Capucha de Asesino" data-price="45.00"><i class="fas fa-cart-plus"></i> Añadir</button>
+                            <button class="btn view-details"><i class="fas fa-info-circle"></i> Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stores" class="digital-stores content-section">
+            <h2 class="section-title">Recargas Digitales</h2>
+            <div class="stores-grid">
+                <div class="store-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/1200px-Steam_icon_logo.svg.png" alt="Steam Logo" class="store-logo">
+                    <h3>Steam</h3>
+                    <p>Códigos de saldo para tu biblioteca de PC.</p>
+                    <div class="recharge-options">
+                        <span class="amount-option" data-amount="5" data-store="steam">$5</span>
+                        <span class="amount-option" data-amount="10" data-store="steam">$10</span>
+                        <span class="amount-option" data-amount="20" data-store="steam">$20</span>
+                    </div>
+                    <button class="btn recharge-btn">Recargar</button>
+                </div>
+                <div class="store-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/PlayStation_Network_logo.svg/1200px-PlayStation_Network_logo.svg.png" alt="PlayStation Network Logo" class="store-logo">
+                    <h3>PlayStation Network</h3>
+                    <p>Tarjetas de regalo para PS Store.</p>
+                    <div class="recharge-options">
+                        <span class="amount-option" data-amount="10" data-store="playstation">$10</span>
+                        <span class="amount-option" data-amount="25" data-store="playstation">$25</span>
+                        <span class="amount-option" data-amount="50" data-store="playstation">$50</span>
+                    </div>
+                    <button class="btn recharge-btn">Recargar</button>
+                </div>
+                <div class="store-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Xbox_logo_%282019%29.svg/1200px-Xbox_logo_%282019%29.svg.png" alt="Xbox Logo" class="store-logo">
+                    <h3>Xbox Live</h3>
+                    <p>Códigos para la tienda de Xbox y Game Pass.</p>
+                    <div class="recharge-options">
+                        <span class="amount-option" data-amount="5" data-store="xbox">$5</span>
+                        <span class="amount-option" data-amount="15" data-store="xbox">$15</span>
+                        <span class="amount-option" data-amount="30" data-store="xbox">$30</span>
+                    </div>
+                    <button class="btn recharge-btn">Recargar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="preorders" class="content-section">
+            <h2 class="section-title">Próximos Lanzamientos y Reservas</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a2/Assassins_Creed_Red_cover_art.jpg');">
+                        <span class="product-badge">Próximamente</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-platforms">
+                            <span class="platform-icon" title="PC"><i class="fas fa-desktop"></i></span>
+                            <span class="platform-icon" title="PlayStation 5"><i class="fab fa-playstation"></i></span>
+                            <span class="platform-icon" title="Xbox Series X"><i class="fab fa-xbox"></i></span>
+                        </div>
+                        <h3 class="product-title">Assassin's Creed Codename Red</h3>
+                        <p class="product-description">La próxima gran entrega de la saga, ambientada en el Japón feudal.</p>
+                        <div class="product-price">
+                            <span class="price-main">Fecha por confirmar</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn pre-order"><i class="fas fa-calendar-alt"></i> Reservar Ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="profile" class="content-section">
+            <h2 class="section-title">Mi Perfil de Asesino</h2>
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar" style="background-image: url('https://i.pinimg.com/originals/9e/3e/09/9e3e09f8261d0a0f3ea53ae1d9d9f6c3.jpg');"></div>
+                    <div class="profile-info">
+                        <h3 id="profile-username">Ezio Auditore da Firenze</h3>
+                        <p id="profile-email">ezio.auditore@maquiavolo.com</p>
+                        <p id="profile-address"><i class="fas fa-map-marker-alt"></i> Via de' Benci, Florencia, Italia</p>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Historial de Compras</h3>
+                    <div id="purchase-history-container">
+                        <ul class="purchase-list">
+                            <li>
+                                <span class="purchase-item">Assassin's Creed Valhalla</span>
+                                <span class="purchase-date"> (2023-11-15)</span>
+                                <span class="purchase-price">$49.99</span>
+                            </li>
+                            <li>
+                                <span class="purchase-item">Réplica Hoja Oculta Ezio</span>
+                                <span class="purchase-date"> (2023-10-20)</span>
+                                <span class="purchase-price">$75.00</span>
+                            </li>
+                            <li>
+                                <span class="purchase-item">Recarga Steam $20</span>
+                                <span class="purchase-date"> (2023-09-01)</span>
+                                <span class="purchase-price">$20.00</span>
+                            </li>
+                        </ul>
+                        <p class="empty-purchase-message" style="display: none;">Aún no tienes compras registradas. ¡Es hora de empezar tu colección!</p>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Resumen de Gastos</h3>
+                    <p>Total gastado hasta la fecha: <span id="total-spent">$144.99</span></p>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="btn"><i class="fas fa-edit"></i> Editar Perfil</button>
+                    <button class="btn btn-outline"><i class="fas fa-cog"></i> Configuración de Cuenta</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Via de' Benci, Firenze, Italia</p>
+                <p><i class="fas fa-envelope"></i> info@maquiavolo.com</p>
+                <p><i class="fas fa-phone"></i> +39 055 1234567</p>
+                <div class="social-links">
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Métodos de Pago</h3>
+                <div class="payment-methods">
+                    <div class="payment-method"><i class="fab fa-cc-visa"></i></div>
+                    <div class="payment-method"><i class="fab fa-cc-mastercard"></i></div>
+                    <div class="payment-method"><i class="fab fa-cc-paypal"></i></div>
+                    <div class="payment-method"><i class="fab fa-cc-stripe"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Maquiavolo. Todos los derechos reservados. Inspirado en la Hermandad de los Asesinos.</p>
+        </div>
+    </footer>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-form">
+                <h2>Iniciar Sesión</h2>
+                <form id="login-form"> 
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña:</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn">Acceder</button>
+                    <div class="form-footer">
+                        ¿No tienes cuenta? <a href="#" id="show-register">Regístrate aquí</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-form">
+                <h2>Registrarse</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="register-username">Nombre de Usuario:</label>
+                        <input type="text" id="register-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña:</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar Contraseña:</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn">Registrarse</button>
+                    <div class="form-footer">
+                        ¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar Sesión</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cart-items-container">
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Impuestos (IVA):</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <a href="#" class="continue-shopping nav-link" data-section="games">
+                    <i class="fas fa-chevron-left"></i> Continuar Comprando
+                </a>
+                <button class="btn checkout-btn">Procesar Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const profileBtn = document.getElementById('profile-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            const cartBtn = document.getElementById('cart-btn');
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+            const cartModal = document.getElementById('cart-modal');
+            const closeButtons = document.querySelectorAll('.modal .close');
+            const showRegisterLink = document.getElementById('show-register');
+            const showLoginLink = document.getElementById('show-login');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const loginForm = document.getElementById('login-form');
+            let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const userProfile = {
+                username: "Ezio Auditore da Firenze",
+                email: "ezio.auditore@maquiavolo.com",
+                address: "Via de' Benci, Florencia, Italia",
+                purchases: [
+                    { name: "Assassin's Creed Valhalla", date: "2023-11-15", price: 49.99 },
+                    { name: "Réplica Hoja Oculta Ezio", date: "2023-10-20", price: 75.00 },
+                    { name: "Recarga Steam $20", date: "2023-09-01", price: 20.00 }
+                ]
+            };
+            function updateAuthUI() {
+                if (isLoggedIn) {
+                    loginBtn.style.display = 'none';
+                    registerBtn.style.display = 'none';
+                    profileBtn.style.display = 'inline-block';
+                    logoutBtn.style.display = 'inline-block';
+                    document.getElementById('profile-username').textContent = userProfile.username;
+                    document.getElementById('profile-email').textContent = userProfile.email;
+                    document.getElementById('profile-address').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${userProfile.address}`;
+                    renderPurchaseHistory();
+                } else {
+                    loginBtn.style.display = 'inline-block';
+                    registerBtn.style.display = 'inline-block';
+                    profileBtn.style.display = 'none';
+                    logoutBtn.style.display = 'none';
+                }
+            }
+            function renderPurchaseHistory() {
+                const purchaseHistoryContainer = document.getElementById('purchase-history-container');
+                const purchaseList = purchaseHistoryContainer.querySelector('.purchase-list');
+                const emptyMessage = purchaseHistoryContainer.querySelector('.empty-purchase-message');
+                let totalSpent = 0;
+
+                purchaseList.innerHTML = ''; 
+
+                if (userProfile.purchases.length === 0) {
+                    emptyMessage.style.display = 'block';
+                    purchaseList.style.display = 'none';
+                } else {
+                    emptyMessage.style.display = 'none';
+                    purchaseList.style.display = 'block';
+                    userProfile.purchases.forEach(purchase => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <span class="purchase-item">${purchase.name}</span>
+                            <span class="purchase-date"> (${purchase.date})</span>
+                            <span class="purchase-price">$${purchase.price.toFixed(2)}</span>
+                        `;
+                        purchaseList.appendChild(listItem);
+                        totalSpent += purchase.price;
+                    });
+                }
+                document.getElementById('total-spent').textContent = `$${totalSpent.toFixed(2)}`;
+            }
+            function showSection(sectionId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.display = 'none'; 
+                });
+                const activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                    activeSection.style.display = 'block'; 
+                }
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.section === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = e.target.dataset.section;
+                    if (sectionId) {
+                        showSection(sectionId);
+                    }
+                });
+            });
+            loginBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginModal.style.display = 'block';
+            });
+
+            registerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                registerModal.style.display = 'block';
+            });
+
+            cartBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                cartModal.style.display = 'block';
+                renderCart(); 
+            });
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    loginModal.style.display = 'none';
+                    registerModal.style.display = 'none';
+                    cartModal.style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+                if (e.target === registerModal) {
+                    registerModal.style.display = 'none';
+                }
+                if (e.target === cartModal) {
+                    cartModal.style.display = 'none';
+                }
+            });
+            showRegisterLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'block';
+            });
+
+            showLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+            });
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                isLoggedIn = true;
+                localStorage.setItem('isLoggedIn', 'true');
+                alert('¡Bienvenido, Asesino! Has iniciado sesión.');
+                loginModal.style.display = 'none';
+                updateAuthUI(); 
+                showSection('profile'); 
+            });
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                isLoggedIn = false;
+                localStorage.setItem('isLoggedIn', 'false');
+                alert('Has cerrado sesión. ¡Hasta pronto!');
+                updateAuthUI();
+                showSection('home'); 
+            });
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            function saveCart() {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            function updateCartCount() {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.querySelector('.cart-count').textContent = totalItems;
+            }
+
+            function renderCart() {
+                const cartItemsContainer = document.getElementById('cart-items-container');
+                cartItemsContainer.innerHTML = '';
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="empty-cart-message">Tu carrito está vacío, mi amigo. ¡Es hora de llenarlo!</p>';
+                    document.getElementById('cart-subtotal').textContent = '$0.00';
+                    document.getElementById('cart-tax').textContent = '$0.00';
+                    document.getElementById('cart-total').textContent = '$0.00';
+                    return;
+                }
+
+                let subtotal = 0;
+
+                const table = document.createElement('table');
+                table.classList.add('cart-items');
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                `;
+                const tbody = table.querySelector('tbody');
+
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                                <span style="margin-left: 10px;">${item.name}</span>
+                            </div>
+                        </td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrement" data-id="${item.id}">-</button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
+                                <button class="quantity-btn increment" data-id="${item.id}">+</button>
+                            </div>
+                        </td>
+                        <td>$${itemTotal.toFixed(2)}</td>
+                        <td>
+                            <span class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></span>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+
+                cartItemsContainer.appendChild(table);
+
+                const taxRate = 0.16; // 
+                const tax = subtotal * taxRate;
+                const total = subtotal + tax;
+
+                document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+                document.getElementById('cart-tax').textContent = `$${tax.toFixed(2)}`;
+                document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+
+                tbody.querySelectorAll('.quantity-btn.increment').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = parseInt(e.target.dataset.id);
+                        const itemIndex = cart.findIndex(item => item.id === id);
+                        if (itemIndex > -1) {
+                            cart[itemIndex].quantity++;
+                            saveCart();
+                            renderCart();
+                            updateCartCount();
+                        }
+                    });
+                });
+
+                tbody.querySelectorAll('.quantity-btn.decrement').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = parseInt(e.target.dataset.id);
+                        const itemIndex = cart.findIndex(item => item.id === id);
+                        if (itemIndex > -1) {
+                            if (cart[itemIndex].quantity > 1) {
+                                cart[itemIndex].quantity--;
+                            } else {
+                                cart.splice(itemIndex, 1); 
+                            }
+                            saveCart();
+                            renderCart();
+                            updateCartCount();
+                        }
+                    });
+                });
+
+                tbody.querySelectorAll('.quantity-input').forEach(input => {
+                    input.addEventListener('change', (e) => {
+                        const id = parseInt(e.target.dataset.id);
+                        let newQuantity = parseInt(e.target.value);
+                        if (isNaN(newQuantity) || newQuantity < 1) {
+                            newQuantity = 1; 
+                        }
+                        const itemIndex = cart.findIndex(item => item.id === id);
+                        if (itemIndex > -1) {
+                            cart[itemIndex].quantity = newQuantity;
+                            saveCart();
+                            renderCart();
+                            updateCartCount();
+                        }
+                    });
+                });
+
+                tbody.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = parseInt(e.target.dataset.id);
+                        cart = cart.filter(item => item.id !== id);
+                        saveCart();
+                        renderCart();
+                        updateCartCount();
+                    });
+                });
+            }
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productCard = e.target.closest('.product-card');
+                    const productId = parseInt(productCard.dataset.productId);
+                    const productName = e.target.dataset.name;
+                    const productPrice = parseFloat(e.target.dataset.price);
+                    const productImage = productCard.querySelector('.product-image').style.backgroundImage.slice(5, -2);
+                    const existingItem = cart.find(item => item.id === productId);
+                    if (existingItem) {
+                        existingItem.quantity++;
+                    } else {
+                        cart.push({
+                            id: productId,
+                            name: productName,
+                            price: productPrice,
+                            quantity: 1,
+                            image: productImage
+                        });
+                    }
+                    saveCart();
+                    updateCartCount();
+                    alert(`"${productName}" añadido al carrito.`);
+                });
+            });
+            document.querySelectorAll('.amount-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.target.closest('.recharge-options').querySelectorAll('.amount-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    e.target.classList.add('selected');
+                });
+            });
+
+            document.querySelectorAll('.recharge-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const selectedAmountOption = e.target.closest('.store-card').querySelector('.amount-option.selected');
+
+                    if (!selectedAmountOption) {
+                        alert('Por favor, selecciona un monto para recargar.');
+                        return;
+                    }
+
+                    const amount = selectedAmountOption.dataset.amount;
+                    const store = selectedAmountOption.dataset.store;
+
+                    if (!store) {
+                        alert('No se pudo determinar la tienda. Intenta de nuevo.');
+                        return;
+                    }
+                    alert(`Recarga de $${amount} en ${store.toUpperCase()} procesada con éxito. El código de recarga será enviado a tu email.`);
+
+                });
+            });
+            const checkoutBtn = document.querySelector('.checkout-btn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', () => {
+                    if (cart.length === 0) {
+                        alert('Tu carrito está vacío. No hay nada que procesar.');
+                        return;
+                    }
+                    alert('Pago procesado con éxito. Tu orden ha sido completada.');
+                    cartModal.style.display = 'none';
+                    cart = []; 
+                    saveCart();
+                    updateCartCount();
+                    renderCart(); 
+                });
+            }
+            updateCartCount();
+            showSection('home');
+            updateAuthUI();
+        });
+    </script>
+</body>
+</html>
