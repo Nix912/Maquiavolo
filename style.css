@@ -1,22 +1,21 @@
 /* Variables CSS para colores temáticos de Assassin's Creed */
 :root {
-    --primary: #8B0000; /* Rojo de los asesinos - Dark Red */
-    --secondary: #0F0F0F; /* Negro casi puro - Near Black */
-    --gold: #D4AF37; /* Dorado renacentista - Renaissance Gold */
-    --white: #F0F0F0; /* Blanco hueso - Off-white */
-    --cream: #F5F5DC; /* Beige para fondos - Beige */
-    --stone: #C0C0C0; /* Color piedra - Stone Gray */
-    --assassin-blue: #0066CC; /* Azul del logo de Assassin's Creed */
-    --dark-brown: #3e2723; /* Tono marrón oscuro para complementar */
-    --light-grey: #e0e0e0; /* Gris claro para bordes sutiles */
+    --primary: #8B0000; 
+    --secondary: #0F0F0F; 
+    --gold: #D4AF37; 
+    --white: #F0F0F0; 
+    --cream: #F5F5DC; 
+    --stone: #C0C0C0; 
+    --assassin-blue: #0066CC; 
+    --dark-brown: #3e2723; 
+    --light-grey: #e0e0e0; 
 }
 
-/* Estilos base */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Usando Palatino Linotype para un estilo clásico, renacentista */
     font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
 
@@ -27,11 +26,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-blend-mode: overlay; /* Mezcla para un sutil efecto oscuro */
-    background-color: rgba(0, 0, 0, 0.7); /* Capa oscura para mejor legibilidad del texto */
+    background-blend-mode: overlay; 
+    background-color: rgba(0, 0, 0, 0.7); 
 }
 
-/* Encabezado */
+
 header {
     background-color: rgba(15, 15, 15, 0.95);
     color: var(--white);
@@ -41,7 +40,7 @@ header {
     align-items: center;
     border-bottom: 3px solid var(--gold);
     position: relative;
-    z-index: 100; /* Asegurar que el encabezado esté encima */
+    z-index: 100; 
 }
 
 header::before {
